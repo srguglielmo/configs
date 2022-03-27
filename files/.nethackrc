@@ -1,0 +1,176 @@
+#
+# srg's NetHack 3.6.1 config
+#
+
+#############
+# Character #
+#############
+# Lawful dwarven valkyries are the strongest role, so start with that
+OPTIONS=align:lawful
+OPTIONS=catname:Rooster
+# Futurama's Parasites Lost
+OPTIONS=fruit:Pelvic Splanchnic Ganglion
+OPTIONS=gender:female
+OPTIONS=name:srg
+OPTIONS=pettype:cat
+OPTIONS=race:dwarf
+OPTIONS=role:valkyrie
+
+####################
+# Gameplay Options #
+####################
+OPTIONS=!autopickup
+OPTIONS=autoquiver
+OPTIONS=number_pad:0
+OPTIONS=paranoid_confirmation:all
+OPTIONS=pickup_burden:Burdened
+
+###################
+# Display Options #
+###################
+OPTIONS=autodescribe
+OPTIONS=dark_room
+#OPTIONS=hilite_pet
+OPTIONS=hilite_pile
+OPTIONS=lit_corridor
+OPTIONS=msg_window:reversed
+OPTIONS=msghistory:50
+OPTIONS=pile_limit:0
+OPTIONS=runmode:crawl
+OPTIONS=showexp
+OPTIONS=showrace
+OPTIONS=standout
+# MacOS: Use IBMgraphics, but setup a Terminal.app profile to use Latin-US (DOS)
+OPTIONS=symset:IBMgraphics
+OPTIONS=time
+OPTIONS=whatis_filter:v
+OPTIONS=whatis_menu
+
+#########
+# Color #
+#########
+OPTIONS=color
+#OPTIONS=!use_darkgray   # Don't use dark gray fg on a black terminal bg
+# Color name and rank in status line
+OPTIONS=hitpointbar
+
+OPTIONS=statushilites:10
+OPTIONS=hilite_status:gold/always/yellow
+OPTIONS=hilite_status:alignment/lawful/lightgreen
+OPTIONS=hilite_status:experience-level/changed/white/always/cyan
+# Specify multiple cutoffs for all ability scores
+OPTIONS=hilite_status:characteristics/<5/red
+OPTIONS=hilite_status:characteristics/>6/orange
+OPTIONS=hilite_status:characteristics/>8/brown
+OPTIONS=hilite_status:characteristics/>11/yellow
+OPTIONS=hilite_status:characteristics/>13/green
+OPTIONS=hilite_status:characteristics/>16/cyan
+OPTIONS=hilite_status:characteristics/>18/lightblue
+OPTIONS=hilite_status:carrying-capacity/burdened/yellow/stressed/orange
+OPTIONS=hilite_status:hitpoints/100%/brightgreen
+OPTIONS=hilite_status:hitpoints/<100%/green
+OPTIONS=hilite_status:hitpoints/<60%/yellow
+OPTIONS=hilite_status:hitpoints/<40%/red
+
+# Enable coloring of inventory items (top->down)
+OPTIONS=menucolors
+# Food that never rots
+MENUCOLOR="lembas wafer"=blue
+MENUCOLOR="cram ration"=blue
+MENUCOLOR="fortune cookie"=blue
+MENUCOLOR="lizard corpse"=blue
+MENUCOLOR="lichen corpse"=blue
+# Bad things
+MENUCOLOR="cursed"=orange&bold
+MENUCOLOR="scroll of amnesia"=red&bold
+MENUCOLOR="bat corpse"=red&bold
+MENUCOLOR="yellow mold corpse"=red&bold
+MENUCOLOR="a heavy iron ball"=red&bold
+MENUCOLOR="unpaid"=red&bold
+# Good things
+MENUCOLOR="blessed"=cyan&bold
+MENUCOLOR="uncursed"=green
+MENUCOLOR="Amulet of Yendor named"=magenta
+MENUCOLOR="gold piece"=yellow
+#MENUCOLOR="loadstone\|wand \(of\|called\) cancellation"=red&bold
+
+################
+# Menu Options #
+################
+OPTIONS=extmenu
+OPTIONS=force_invmenu
+OPTIONS=!implicit_uncursed
+OPTIONS=menu_headings:underline
+OPTIONS=menu_objsyms
+OPTIONS=menustyle:partial
+OPTIONS=sortloot:full
+
+################
+# Misc Options #
+################
+OPTIONS=disclose:+i +a +v +g +c +o
+OPTIONS=!mail
+OPTIONS=!mouse_support
+OPTIONS=scores:10t 4a o
+OPTIONS=!silent
+
+###########
+# Symbols #
+###########
+SYMBOLS=S_boulder:8
+
+############
+# MSGTYPEs #
+############
+# Delayed instadeaths
+MSGTYPE=stop "The .* (grabs|swings itself around) you!"
+MSGTYPE=stop "You don't feel very well."
+MSGTYPE=stop "You are turning a little green."
+MSGTYPE=stop "Your limbs are getting oozy."
+MSGTYPE=stop "Your skin begins to peel away."
+MSGTYPE=stop "You are turning into a green slime."
+MSGTYPE=stop "You are slowing down."
+MSGTYPE=stop "Your limbs are stiffening."
+MSGTYPE=stop "It constricts your throat!"
+MSGTYPE=stop "You find it hard to breathe."
+MSGTYPE=stop "You're gasping for air."
+MSGTYPE=stop "Your blood is having trouble reaching your brain."
+MSGTYPE=stop "You can no longer breathe."
+MSGTYPE=stop "You're turning blue."
+MSGTYPE=stop "Your consciousness is fading."
+MSGTYPE=stop "You feel deathly sick."
+MSGTYPE=stop "You feel * worse."
+MSGTYPE=stop "You faint .*"
+MSGTYPE=stop ".* needs food.*"
+# Things that aren't dangerous by themselves but could kill you if you don't notice
+MSGTYPE=stop "You fail to cast the spell correctly."
+MSGTYPE=stop "You see here a .*trice corpse."
+MSGTYPE=stop "You are beginning to feel .*"
+# Traps
+MSGTYPE=stop "A trap door .*"
+MSGTYPE=stop "A cloud of gas .*"
+MSGTYPE=stop "You are splashed.*"
+# Don't speed past wrest message when wresting
+MSGTYPE=stop "You wrest.*"
+# Don't miss the vibrating square
+MSGTYPE=stop "You feel a strange vibration .*"
+# Enhancements
+MSGTYPE=stop "You feel more confident in your weapon skills."
+# Other
+MSGTYPE=stop "You hear .*"
+MSGTYPE=stop "You feel .*"
+MSGTYPE=stop "You find .*"
+MSGTYPE=stop "You kill .*"
+MSGTYPE=stop "You smell .*"
+MSGTYPE=stop "Something is written .*"
+MSGTYPE=stop "You destroy .*"
+MSGTYPE=stop "You experience .*"
+MSGTYPE=stop ".* wields .*"
+MSGTYPE=stop "You find a hidden passage."
+MSGTYPE=stop ".* steps reluctantly.*"
+MSGTYPE=stop ".* hidden.*"
+MSGTYPE=stop ".* suddenly.*"
+MSGTYPE=stop ".* picks up .*"
+MSGTYPE=stop ".* is killed.*"
+# Hide annoying messages
+MSGTYPE=hide "You swap places with .*"

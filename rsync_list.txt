@@ -1,0 +1,59 @@
+# Rsync includes this via --files-from.
+# Paths are relative to the ./files/ directory in this repo
+# and the /home/$1/ directory on the local system.
+
+# VS Code.
+.config/Code/User/settings.json
+
+# Weechat.
+.config/weechat/alias.conf
+.config/weechat/autosort.conf
+.config/weechat/buflist.conf
+.config/weechat/charset.conf
+.config/weechat/colorize_nicks.conf
+.config/weechat/exec.conf
+.config/weechat/fifo.conf
+.config/weechat/fset.conf
+.config/weechat/guile.conf
+#.config/weechat/irc.conf
+.config/weechat/logger.conf
+.config/weechat/lua.conf
+.config/weechat/perl.conf
+.config/weechat/plugins.conf
+.config/weechat/python.conf
+.config/weechat/relay.conf
+.config/weechat/script.conf
+#.config/weechat/sec.conf
+.config/weechat/spell.conf
+.config/weechat/trigger.conf
+.config/weechat/typing.conf
+.config/weechat/weechat.conf
+.config/weechat/xfer.conf
+
+# Shells.
+.bash_logout
+.bash_profile
+.bashrc
+#.cshrc
+.zlogin
+.zlogout
+.zprofile
+.zshenv
+.zshrc
+
+# System utilities and other miscellaneous things.
+.config/htop/htoprc
+.gitconfig
+.gnupg/gpg-agent.conf
+.gnupg/gpg.conf
+.lftprc
+#.mednafen/mednafen.cfg
+.nethackrc
+#.phpcs-ruleset.xml
+.screenrc
+.ssh/config
+.tmux.conf
+.vimrc
+
+# The local bin.
+bin/

@@ -1,0 +1,28 @@
+#
+# srg's ~/.lftprc
+#
+
+# Show full protocol
+#debug
+
+# Don't cache
+set cache:enable false
+
+set cmd:move-background false
+
+set cmd:prompt "\u@\h \w\n\l > "
+
+set cmd:save-cwd-history false
+set cmd:save-rl-history false
+
+# Refuse to send cleartext passwords
+set ftp:ssl-force true
+
+# Request SSL for data transfers
+set ftp:ssl-protect-data true
+set ftp:ssl-protect-fxp true
+
+set ftp:verify-address true
+
+# A full disk should be fatal
+set xfer:disk-full-fatal true

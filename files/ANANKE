@@ -1,0 +1,109 @@
+#
+# ANANKE -- kernel configuration file for FreeBSD/amd64
+# Last used on FreeBSD 6 or 7
+#
+
+ident		ANANKE
+cpu			HAMMER				# For Intel EM64 Xeons
+options 	SCHED_ULE			# ULE scheduler
+options 	PREEMPTION			# Kernel thread preemption
+options		IPI_PREEMPTION
+
+##############
+## Hardware ##
+##############
+options 	SMP					# Symmetric MultiProcessor kernel
+device		acpi				# Bus support
+device		pci					# Bus support
+device		coretemp			# Intel on-die temp sensor
+device		ata					# (S)ATA controllers
+device		ahci				# AHCI-Compatible SATA controllers
+options 	ATA_STATIC_ID		# Static device numbering
+device		ata					# Legacy (S)ATA disks
+options 	GEOM_PART_GPT		# GUID Partition Table support
+options 	GEOM_LABEL			# Disk labels
+options		GEOM_ELI			# GELI disk encryption for swap encryption
+options 	FFS					# Berkeley Fast FileSystem
+options 	UFS_ACL				# UFS Access Control Lists
+options 	CD9660				# CD/ISO filesystem support
+options		MSDOSFS				# MS DOS FS
+device		pass				# Passthrough device. Direct ATA/SCSI access
+device		scbus				# SCSI bus. Required for ATA and umass
+device		da					# Direct Access disks. Required for umass
+device		cd					# CD drive support
+device		atkbdc				# AT keyboard controller
+device		atkbd				# AT keyboard
+device		kbdmux				# Keyboard multiplexer. Req for usb?
+options		PROCDESC			# Support for process descriptors ???
+device		padlock_rng			# VIA Padlock RNG
+device		rdrand_rng			# Intel Bull Mountain RNG
+device		vga					# Video Graphics Array
+options		VESA				# Video Electronics Standards Association
+device		sc					# Syscons, the console driver
+options		SC_DISABLE_KDBKEY	# Ignore the kernel debugger shortcuts
+options		SC_DISABLE_REBOOT	# Ignore the ctrl+alt+del reboot shortcut
+options		SC_HISTORY_SIZE=1000# Console Scrollback
+options		SC_NO_SYSMOUSE		# No mouse support in sc
+options		SC_NO_CUTPASTE		# Implied by SC_NO_SYSMOUSE
+options		SC_NO_FONT_LOADING	# Don't allow for custom fonts
+options		SC_PIXEL_MODE		# Allow sc to act on pixels rather than text
+options		SC_NORM_ATTR=(FG_GREEN|BG_BLACK)
+options		SC_NORM_REV_ATTR=(FG_YELLOW|BG_GREEN)
+options		SC_KERNEL_CONS_ATTR=(FG_RED|BG_BLACK)
+options		SC_KERNEL_CONS_REV_ATTR=(FG_BLACK|BG_RED)
+# USB support
+options 	USB_DEBUG			# enable debug msgs
+device		uhci				# UHCI PCI->USB interface
+device		ohci				# OHCI PCI->USB interface
+device		ehci				# EHCI PCI->USB interface (USB 2.0)
+device		usb					# USB Bus
+device		uhid				# "Human Interface Devices"
+device		ukbd				# Keyboard
+device		umass				# Disks/Mass storage - Requires scbus and da
+
+################
+## Networking ##
+################
+options 	INET				# IPv4
+options		INET6				# IPv6
+#device		bpf					# Berkeley Packet Filter. Required for DHCP.
+device		em					# Intel PRO/1000 Gigabit Ethernet Family
+options		DEVICE_POLLING		# Enable the option to poll the NICs
+options		HZ=1000
+options		ACCEPT_FILTER_HTTP	# Kernel filters the connection before passing it on
+options		ACCEPT_FILTER_DATA
+options		ACCEPT_FILTER_DNS
+device		loop				# Network loopback
+device		ether				# Ethernet support
+device		pf					# OpenBSD's Packet Filter
+device		pflog				# PF logging system
+options		ALTQ				# PF's queueing system
+options		ALTQ_CBQ			# Class Based Queueing
+options		ALTQ_PRIQ			# Priority Queueing
+options		ALTQ_RED			# Random Early Detection
+options		ALTQ_RIO			# RED In/Out
+options		NFSD				# NFS Server
+options		NFSCL				# NFS Client
+device		gif					# IPv6 and IPv4 Tunneling
+device		tun					# OpenVPN Tunneling
+device		tap					# OpenVPN Tunneling
+options		TCP_OFFLOAD			# TCP offload ??
+
+##########
+## Misc ##
+##########
+device		crypto				# OpenBSD's core crypto framework. Req for GELI.
+options 	SCSI_DELAY=100		# Delay in ms before probing SCSI. 100ms min.
+options 	SYSVSHM				# SysV-style shared memory
+options 	SYSVMSG				# SysV-style message queues
+options 	SYSVSEM				# SysV-style semaphores
+options 	_KPOSIX_PRIORITY_SCHEDULING	# P1003.1B extensions
+options 	PRINTF_BUFR_SIZE=128# Prevent printf output being interspersed	
+options 	KBD_INSTALL_CDEV	# CDEV entry in /dev
+options 	INCLUDE_CONFIG_FILE	# Include this file in kernel
+#options		AUDIT			# Event Auditing
+
+# Pseudo devices.
+device		random				# Entropy device
+device		pty					# BSD-style compatibility pseudo ttys
+device		md					# Memory "disks"

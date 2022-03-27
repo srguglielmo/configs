@@ -1,0 +1,93 @@
+#
+# srg's git config
+#
+
+[advice]
+	addEmptyPathspec    = false
+	pushUpdateRejected  = false
+	statusHints         = false
+	waitingForEditor    = false
+[alias]
+	ap                  = add -p
+	bl                  = branch -av
+	ci                  = commit -v
+	co                  = checkout
+	cpx                 = cherry-pick -x
+	diffc               = diff --cached
+	dns                 = diff --name-status
+	ff                  = merge --ff-only
+	graph               = log --graph --oneline
+	in                  = log --oneline HEAD..@{u}
+	out                 = log --oneline @{u}..HEAD
+	patch               = !git --no-pager diff --no-color
+	psuh                = push
+	puhs                = push
+	rb                  = rebase --autostash -i @{u}
+	shown               = show --name-status
+[color]
+	ui                  = true
+[color "diff"]
+	commit              = yellow bold
+	frag                = magenta bold
+	func                = 146 bold
+	meta                = 11
+	new                 = green bold
+	old                 = red bold
+	whitespace          = red reverse
+[color "diff-highlight"]
+	newHighlight        = green bold 22
+	newNormal           = green bold
+	oldHighlight        = red bold 52
+	oldNormal           = red bold
+[column]
+	ui                  = auto
+[commit]
+	gpgsign             = true
+[core]
+	autocrlf            = false
+	editor              = vim
+	pager               = diff-so-fancy | less --tabs=4 -FRX
+	whitespace          = -blank-at-eof
+[diff]
+	mnemonicPrefix      = true
+	submodule           = log
+	tool                = vimdiff
+	wsErrorHighlight    = old,new
+[diff-so-fancy]
+	stripLeadingSymbols = false
+[difftool]
+	prompt              = false
+[fetch]
+	fsckObjects         = true
+	prune               = true
+[gc]
+	autoDetach          = false
+[gpg]
+	program             = /usr/bin/gpg
+[init]
+	defaultBranch       = main
+[interactive]
+	diffFilter          = diff-so-fancy --patch
+	singleKey           = true
+[log]
+	abbrevCommit        = true
+	date                = relative
+[merge]
+	tool                = vimdiff
+[pager]
+	branch              = false
+[push]
+	default             = nothing
+[rebase]
+	abbreviateCommands  = true
+	instructionFormat   = (%an <%ae>) %s
+	missingCommitsCheck = error
+	stat                = true
+[receive]
+	fsckObjects         = true
+[status]
+	submoduleSummary    = true
+[transfer]
+	fsckObjects         = true
+[user]
+	name                = Steve Guglielmo
